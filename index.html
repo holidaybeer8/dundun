@@ -5,7 +5,7 @@
 <title>든든해장국밥 월간 정산서</title>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="noindex" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Black+Han+Sans&display=swap" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=Nanum+Brush+Script&display=swap" />
 <style>
 /* ===== 감골연탄집 정산서 v4 — 브랜드 모바일 앱 테마 ===== */
 :root {
@@ -15,10 +15,10 @@
   --muted: #8a7a67;
   --line: #e7ddcc;
   --line-strong: #d2c4ad;
-  --brand: #1d1a17;        /* 로고 브라운 */
+  --brand: #a1352c;        /* 로고 브라운 */
   --leaf: #3d6b4a;         /* 잎 그린 */
-  --ember: #33291f;        /* 감 오렌지 (버튼·포인트) */
-  --ember-soft: #e9e4d8;
+  --ember: #a1352c;        /* 감 오렌지 (버튼·포인트) */
+  --ember-soft: #f7e6e1;
   --chipbg: #ece8de;
   --stickybg: #1d1a17;
   --stickyink: #f4ede2;
@@ -26,7 +26,7 @@
   --pos: #1662ce;          /* GOOD 파랑 */
   --neg: #cc372a;          /* 점검필요 빨강 */
   --shadow: 0 1px 3px rgba(43, 33, 24, 0.09);
-  --focus: #8c5a2b;
+  --focus: #a1352c;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -36,10 +36,10 @@
     --muted: #a8988a;
     --line: #3f372c;
     --line-strong: #52483a;
-    --brand: #ece7dd;
+    --brand: #e08a7d;
     --leaf: #6f9b7e;
-    --ember: #b8a888;
-    --ember-soft: #37332c;
+    --ember: #cf7466;
+    --ember-soft: #3d2a26;
     --chipbg: #372f25;
     --stickybg: #14100d;
     --stickyink: #f4ede2;
@@ -47,7 +47,7 @@
     --pos: #79aaff;
     --neg: #ff8072;
     --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    --focus: #c9a06a;
+    --focus: #cf7466;
   }
 }
 :root[data-theme="dark"] {
@@ -57,10 +57,10 @@
   --muted: #a8988a;
   --line: #3f372c;
   --line-strong: #52483a;
-  --brand: #ece7dd;
+  --brand: #e08a7d;
   --leaf: #6f9b7e;
-  --ember: #b8a888;
-  --ember-soft: #37332c;
+  --ember: #cf7466;
+  --ember-soft: #3d2a26;
   --chipbg: #372f25;
   --stickybg: #14100d;
   --stickyink: #f4ede2;
@@ -68,7 +68,7 @@
   --pos: #79aaff;
   --neg: #ff8072;
   --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-  --focus: #c9a06a;
+  --focus: #cf7466;
 }
 
 * { box-sizing: border-box; }
@@ -705,11 +705,11 @@ input.need, select.need { border-color: var(--ember); box-shadow: 0 0 0 1px var(
 }
 
 /* ===== 든든해장국밥 전용 오버라이드 ===== */
-:root { --accent2: #8c5a2b; }
+:root { --accent2: #a1352c; }
 @media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) { --accent2: #c9a06a; }
+  :root:not([data-theme="light"]) { --accent2: #cf7466; }
 }
-:root[data-theme="dark"] { --accent2: #c9a06a; }
+:root[data-theme="dark"] { --accent2: #cf7466; }
 
 .logo-svg { color: var(--brand); width: 168px; }
 .logo-word {
@@ -720,6 +720,18 @@ input.need, select.need { border-color: var(--ember); box-shadow: 0 0 0 1px var(
 }
 .autodesc, .credit-top, .credit, .savechip.saving { color: var(--accent2); }
 .addbtn { color: var(--accent2); }
+
+/* 붉은 붓글씨 워드마크 */
+.logo-word {
+  font-family: "Nanum Brush Script", "IBM Plex Sans KR", cursive;
+  font-size: 46px;
+  letter-spacing: 0.01em;
+  color: var(--brand);
+  -webkit-text-stroke: 1.4px var(--brand);
+  line-height: 1;
+  margin-top: 2px;
+}
+.logo-svg { width: 172px; }
 </style>
 </head>
 <body>
@@ -1059,7 +1071,7 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
    * 본사 관리 영역 ③: 재료비 공급처 (변경 시 여기만 수정)
    * ============================================================ */
   const MAT_DEFS = [
-    ['bne',  '브네일푸드', '고기 주문'],
+    ['bne',  '브니엘푸드', '고기 주문'],
     ['baek', '백암진식품', '곱창·편육'],
     ['wel',  '웰스토리', '소스·공산품·야채 등'],
     ['das',  '다산독도', '주류'],
@@ -1299,49 +1311,62 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     return false;
   }
 
-  /* ---------- 캔버스 공통: 든든해장국밥 로고 (산·해·달·뚝배기) ---------- */
-  const BRAND_INK = '#1d1a17', ACCENT = '#8c5a2b';
+  /* ---------- 캔버스 공통: 든든해장국밥 로고 (붉은색 붓 느낌) ---------- */
+  const BRAND_INK = '#a1352c', ACCENT = '#a1352c';
+  /* 붓글씨 워드마크: 채움 + 외곽선 겹치기로 굵기 보강 */
+  function brushText(g, text, x, y, size, F) {
+    g.font = F(400, Math.round(size), "'Nanum Brush Script'");
+    g.fillStyle = BRAND_INK;
+    g.strokeStyle = BRAND_INK;
+    g.lineWidth = Math.max(1.5, size * 0.045);
+    g.lineJoin = 'round';
+    g.fillText(text, x, y);
+    g.strokeText(text, x, y);
+  }
   function drawBrandLogo(g, x, y, scale, F) {
     const s = scale;
     g.strokeStyle = BRAND_INK; g.fillStyle = BRAND_INK;
     g.lineCap = 'round'; g.lineJoin = 'round';
-    /* 산 능선 */
+    /* 해(채움 원, 왼쪽 위) */
+    g.beginPath(); g.arc(x + 24 * s, y + 6 * s, 8 * s, 0, Math.PI * 2); g.fill();
+    /* 산 능선 (두 봉우리) */
     g.lineWidth = 4.5 * s;
     g.beginPath();
-    g.moveTo(x, y + 46 * s);
-    g.lineTo(x + 30 * s, y + 10 * s);
-    g.lineTo(x + 48 * s, y + 32 * s);
+    g.moveTo(x, y + 52 * s);
+    g.lineTo(x + 34 * s, y + 12 * s);
+    g.lineTo(x + 50 * s, y + 30 * s);
     g.lineTo(x + 62 * s, y + 18 * s);
-    g.lineTo(x + 76 * s, y + 38 * s);
+    g.lineTo(x + 74 * s, y + 32 * s);
     g.stroke();
-    /* 해(채움)와 달(고리) */
-    g.beginPath(); g.arc(x + 14 * s, y + 4 * s, 6.5 * s, 0, Math.PI * 2); g.fill();
+    /* 달(고리, 오른쪽 위) */
     g.lineWidth = 3.5 * s;
-    g.beginPath(); g.arc(x + 92 * s, y + 2 * s, 6.5 * s, 0, Math.PI * 2); g.stroke();
-    /* 뚝배기 */
+    g.beginPath(); g.arc(x + 138 * s, y + 4 * s, 7.5 * s, 0, Math.PI * 2); g.stroke();
+    /* 뚝배기 (오른쪽) */
     g.lineWidth = 4.5 * s;
     g.beginPath();
-    g.ellipse(x + 112 * s, y + 32 * s, 22 * s, 7 * s, 0, 0, Math.PI * 2);
+    g.ellipse(x + 108 * s, y + 36 * s, 24 * s, 7.5 * s, 0, 0, Math.PI * 2);
     g.stroke();
     g.beginPath();
-    g.moveTo(x + 91 * s, y + 34 * s);
-    g.quadraticCurveTo(x + 92 * s, y + 54 * s, x + 112 * s, y + 55 * s);
-    g.quadraticCurveTo(x + 132 * s, y + 54 * s, x + 133 * s, y + 34 * s);
+    g.moveTo(x + 85 * s, y + 39 * s);
+    g.quadraticCurveTo(x + 86 * s, y + 60 * s, x + 108 * s, y + 61 * s);
+    g.quadraticCurveTo(x + 130 * s, y + 60 * s, x + 131 * s, y + 39 * s);
     g.stroke();
-    /* 김 */
-    g.lineWidth = 3 * s;
-    [[104, 0], [118, -4]].forEach(([dx, dy]) => {
+    /* 받침 */
+    g.lineWidth = 3.5 * s;
+    g.beginPath(); g.moveTo(x + 88 * s, y + 65 * s); g.lineTo(x + 128 * s, y + 65 * s); g.stroke();
+    /* 김 3줄 */
+    g.lineWidth = 2.8 * s;
+    [[98, 0], [108, -5], [118, 0]].forEach(([dx, dy]) => {
       g.beginPath();
-      g.moveTo(x + dx * s, y + (22 + dy) * s);
-      g.quadraticCurveTo(x + (dx - 4) * s, y + (14 + dy) * s, x + dx * s, y + (6 + dy) * s);
+      g.moveTo(x + dx * s, y + (26 + dy) * s);
+      g.bezierCurveTo(x + (dx - 5) * s, y + (18 + dy) * s, x + (dx + 5) * s, y + (12 + dy) * s, x + dx * s, y + (4 + dy) * s);
       g.stroke();
     });
-    /* 워드마크 */
-    g.font = F(400, Math.round(44 * s), "'Black Han Sans'");
-    g.fillText('든든해장국밥', x + 148 * s, y + 48 * s);
-    g.font = F(400, Math.round(15 * s));
-    g.fillStyle = ACCENT;
-    g.fillText('温飯味酒', x + 2 * s, y + 66 * s);
+    /* 温飯味酒 (왼쪽 아래) */
+    g.font = F(700, Math.round(15 * s), 'serif');
+    g.fillText('温飯味酒', x + 2 * s, y + 64 * s);
+    /* 워드마크 (붓글씨, 오른쪽) */
+    brushText(g, '든든해장국밥', x + 152 * s, y + 52 * s, 58 * s, F);
   }
 
   /* ============================================================
@@ -1749,16 +1774,18 @@ function(a,b,c){if(!Vd(b))throw Error(m(200));return Wd(null,a,b,!1,c)};Q.unmoun
     </div>`;
   }
 
-  /* 든든해장국밥 로고 (SVG): 산 능선 + 해 + 달 + 김 나는 뚝배기 */
-  const LogoSvg = () => html`<svg className="logo-svg" viewBox="0 0 150 74" aria-hidden="true">
-    <path d="M4 52 L34 14 L52 38 L66 22 L80 44" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="16" cy="8" r="6.5" fill="currentColor" />
-    <circle cx="96" cy="7" r="6" fill="none" stroke="currentColor" strokeWidth="3.5" />
-    <ellipse cx="114" cy="38" rx="22" ry="7" fill="none" stroke="currentColor" strokeWidth="4.5" />
-    <path d="M93 40 Q94 60 114 61 Q134 60 135 40" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
-    <path d="M106 28 Q102 20 106 12" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    <path d="M120 24 Q116 16 120 8" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-    <text x="2" y="71" fontSize="11" fill="#8c5a2b" fontFamily="serif">温飯味酒</text>
+  /* 든든해장국밥 로고 (SVG, 붉은색): 해 + 산 + 달 + 김 나는 뚝배기 + 温飯味酒 */
+  const LogoSvg = () => html`<svg className="logo-svg" viewBox="0 0 150 80" aria-hidden="true">
+    <circle cx="26" cy="10" r="8" fill="currentColor" />
+    <path d="M2 56 L36 14 L52 32 L64 20 L76 34" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" strokeLinejoin="round" />
+    <circle cx="138" cy="8" r="7" fill="none" stroke="currentColor" strokeWidth="3.5" />
+    <ellipse cx="108" cy="40" rx="24" ry="7.5" fill="none" stroke="currentColor" strokeWidth="4.5" />
+    <path d="M85 43 Q86 63 108 64 Q130 63 131 43" fill="none" stroke="currentColor" strokeWidth="4.5" strokeLinecap="round" />
+    <path d="M88 69 L128 69" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" />
+    <path d="M98 30 C93 22, 103 16, 98 8" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
+    <path d="M108 25 C103 17, 113 11, 108 3" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
+    <path d="M118 30 C113 22, 123 16, 118 8" fill="none" stroke="currentColor" strokeWidth="2.8" strokeLinecap="round" />
+    <text x="2" y="72" fontSize="12" fill="currentColor" fontFamily="serif" fontWeight="700">温飯味酒</text>
   </svg>`;
 
   /* ---------- 앱 ---------- */
